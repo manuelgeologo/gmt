@@ -6372,6 +6372,8 @@ void * GMT_Create_Session (const char *session, unsigned int pad, unsigned int m
 	static char *unknown = "unknown";
 	char *dir = NULL;
 
+	fprintf(stderr, "%s %d %d\n", session, pad, mode);
+
 	if ((API = calloc (1, sizeof (struct GMTAPI_CTRL))) == NULL) return_null (NULL, GMT_MEMORY_ERROR);	/* Failed to allocate the structure */
 	API->verbose = (mode >> 16);	/* Pick up any -V settings from gmt.c */
 	API->pad = pad;		/* Preserve the default pad value for this session */
